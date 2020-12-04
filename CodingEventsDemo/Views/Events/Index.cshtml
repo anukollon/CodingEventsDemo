@@ -17,34 +17,39 @@
 }
 else
 {
-    <table class="table">
+
+<table class="table">
+    <tr>
+        <th>
+            Index
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Contact Email
+        </th>
+        <th>
+            Event Type
+        </th>
+    </tr>
+    @{
+        int i = 1;
+    }
+    @foreach (var evt in Model)
+    {
         <tr>
-            <th>
-                Id
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Contact Email
-            </th>
-            <th>
-                Event Type
-            </th>
+            <td>@i</td>
+            <td>@evt.Name</td>
+            <td>@evt.Description</td>
+            <td>@evt.ContactEmail</td>
+            <td>@evt.Type</td>
         </tr>
-        @foreach (var evt in Model)
-        {
-            <tr>
-                <td>@evt.Id</td>
-                <td>@evt.Name</td>
-                <td>@evt.Description</td>
-                <td>@evt.ContactEmail</td>
-                <td>@evt.Type</td>
-            </tr>
-        }
-    </table>
+        i++;
+    }
+</table>
 }
 
